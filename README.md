@@ -2,4 +2,4 @@
   <img alt="TinyML" src="./assets/images.png" width="200px">
 </p>
 
-<h1 align="center">Etudes de Cas du TinyML-IA EMBARQUEE : Cas de la classification n associé à des mouvements du smartphone. </h1>
+<h1 align="center">Etudes de Cas du TinyML-IA EMBARQUEE : Cas de la classification n associé à des mouvements du smartphone.</h1>
