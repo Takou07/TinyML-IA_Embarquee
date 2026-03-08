@@ -12,9 +12,7 @@
   <a href="#Apercu">Overview</a> •
   <a href="#TINYML – IA EMBARQUEE">TINYML </a> •
   <a href="# Prérequis">Prérequis</a> •
-  <a href="#Détection Mouvement Horizontal ou Vertical">Implementation</a> •
-  <a href="#installation--usage">Installation & Usage</a> •
-  <a href="#troubleshooting">Troubleshooting</a>
+  <a href="#Détection Mouvement Horizontal et Vertical">Implementation</a> •
 </p>
 
 ## Apercu
@@ -109,4 +107,55 @@ Testing Set: Une fois le modèle obtenu, on effectue des prédictions à l'aide 
   <img alt="dataset" src="./assets/split_dataset.webp" width="400px">
 </p>
 
-### Mise en forme des données
+Avant d'entraîner l'algorithme d'IA à reconnaître les différentes classes, il faut extraire, à partir des données temporelles acquises, des attributs (features) que l'on peut voir comme les "caractéristiques principales" des signaux. Les différences parmi ces attributs permettront de distinguer et de classer les différents mouvements.
+Pour cela, nous allons utiliser le principe de l'analyse spectrale, qui consiste à décomposer un signal en ses différentes fréquences constitutives, permettant d'étudier leur amplitude et leur répartition. Cela est habituellement réalisé à l'aide de la transformée de Fourier pour analyser des phénomènes périodiques ou vibratoires.
+
+#### Principe de création d'échantillon dans notre projet : Méthode de fenetre glissante
+
+Afin de transformer le signal continu en données exploitables par le modèle, nous utilisons le principe de la **fenêtre glissante**. Cette technique consiste à découper le signal temporel en segments de taille fixe, appelés fenêtres, qui se déplacent progressivement le long du signal. Chaque fenêtre est caractérisée par deux paramètres : la taille de la fenêtre (window size), qui définit la durée de chaque segment, et le pas de déplacement (window increase), qui détermine le décalage entre deux fenêtres consécutives.
+Lorsque le pas de déplacement est inférieur à la taille de la fenêtre, les fenêtres se chevauchent, ce qui permet de générer davantage d'échantillons d'entraînement et de s'assurer qu'aucun geste ne soit manqué entre deux découpes. Chaque fenêtre constitue alors un échantillon indépendant, étiqueté avec sa classe correspondante, et sera utilisé comme entrée du modèle d'apprentissage automatique.
+
+L'image ci dessous demontre cela : 
+
+<p align="center">
+  <img alt="fenetre glissante" src="./assets/fenetre_glissante.png" width="400px">
+</p>
+
+#### Analyse du Spectre
+
+<p align="center">
+  <img alt="Spectre" src="./assets/Spectre_analysis.webp" width="400px">
+</p>
+
+- Dans cet image on peut voir le signal brut de "Secouer_horizontalement". La zone grisée à gauche est un morceau qui est analysé en bas dont les valeurs brutes avant tout traitement DSP 
+
+- Après l'application du filtre on peut voit que le signal est légèrement lissé
+
+<p align="center">
+  <img alt="Spectre" src="./assets/processed_feature.png" width="400px">
+</p>
+
+Ici on peut trouver les paramètres généraux du traitement DSP :
+- Aucun filtre appliqué
+- Le type de traitement : FFT (transformé de fourrier ) , 16 points de fréquence analysés, chevauchement des frames FFT pour plus de précision
+- Sur le graphe **Spectral Power** on observe Énergie forte entre 0 et 8 Hz et une énergie qui chute après 8 Hz
+- On oberse aussi Processed features qui sont les features EXTRAITES par la FFT c'est CE VECTEUR qui sera donné en entrée au modèle de classification
+
+Ce processus est très important pour distinguer les gestes : 
+
+Secouer horizontalement     Marche
+────────────────────────    ──────
+Énergie forte à 2-4 Hz      Énergie forte à 1-2 Hz
+Pic unique                  Pic régulier cadencé
+
+Chute                       Repos
+─────                       ──────
+Énergie sur TOUTES          Énergie quasi nulle
+les fréquences              partout
+(choc = signal large bande)
+
+On observe alors sur un graphique des ensembles de points de 2 couleurs différentes, associées aux 2 classes à classifier. , les points d'une même couleur forment des ensembles groupés(clusters). Ces attributs  révélent des différences caractéristiques entre les 2 classes.
+
+<p align="center">
+  <img alt="feature" src="./assets/feature_explorer.png" width="400px">
+</p>
