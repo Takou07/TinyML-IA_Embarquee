@@ -214,3 +214,15 @@ Ici le "Feature explorer" nous permet de retrouver les échantillons pour lesque
 
 #### Inference ➔ Predictions
 
+On entre ici dans la phase d'utilisation (inférence) de l'algorithme d'IA qui a été précédemment entrainé et testé.
+
+Première possibilité avec Edge Impulse : "Live Classification" – adapté au test rapide du modèle
+
+
+
+A la fin de l'acquisition, la mesure apparaît à l'écran de l'ordinateur. On retrouve le découpage en plusieurs échantillons avec la méthode de la fenêtre glissante définie dans la vidéo, ce qui amène plusieurs échantillons pour une  seule mesure. Pour chaque échantillon, l'algorithme effectue une prédiction d'appartenance à une des trois classes. Cette prédiction est caractérisée par une probabilité (entre 0 et 1) d'appartenance à chaque classe.
+
+
+#### A faire plus tard 
+
+Déploier mon modèle d'IA crée dans mon téléphone et l'utiliser sous forme de WebApp pour détecter les mouvements.
