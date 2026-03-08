@@ -158,7 +158,7 @@ On observe alors sur un graphique des ensembles de points de 2 couleurs différe
   <img alt="feature" src="./assets/Feature_explorer.png" width="500px">
 </p>
 
-#### Choix du modèle
+### Choix du modèle
 
 <p align="center">
   <img alt="feature" src="./assets/Training_setting.webp" width="500px">
@@ -175,7 +175,7 @@ Au niveau de l'architecture du réseau de neurones, on a :
 - 2 couches cachées de 20 neurones
 - 1 couche Sortie de 10 neurones
 
-#### Phase d'apprentissage 
+### Phase d'apprentissage 
 
 C'est à cette étape que Edge Impulse utilise entre autres un algorithme de descente de gradient pour ajuster les poids et les biais associés à chaque neurone artificiel.
 
@@ -197,7 +197,7 @@ Pour aller plus dans le détail, on peut observer la matrice de confusion :
 Le "Data explorer" nous permet de retrouver les échantillons pour lesquels la
 prédiction a été mauvaise. Ci-contre, on peut voir qu'aucun échantillons ont vu leur classe mal prédite
 
-#### Test du modèle
+### Test du modèle
 
 On obtient un récapitulatif de performances similaire au précédent. Assez logiquement, les performances sont un peu moins satisfaisantes que sur le set de données d'entrainement (on rappelle que l'algorithme n'avais "jamais vu" les
 données de test). Dans l'exemple ci-contre, la précision obtenue, supérieure à 97.60% est satisfaisante.
@@ -212,17 +212,19 @@ Ici le "Feature explorer" nous permet de retrouver les échantillons pour lesque
   <img alt="Explorer_test" src="./assets/feature_test.png" width="500px">
 </p>
 
-#### Inference ➔ Predictions
+### Inference ➔ Predictions
 
 On entre ici dans la phase d'utilisation (inférence) de l'algorithme d'IA qui a été précédemment entrainé et testé.
 
 Première possibilité avec Edge Impulse : "Live Classification" – adapté au test rapide du modèle
 
-
+<p align="center">
+  <img alt="Inference" src="./assets/Inference.gif" width="500px">
+</p>
 
 A la fin de l'acquisition, la mesure apparaît à l'écran de l'ordinateur. On retrouve le découpage en plusieurs échantillons avec la méthode de la fenêtre glissante définie dans la vidéo, ce qui amène plusieurs échantillons pour une  seule mesure. Pour chaque échantillon, l'algorithme effectue une prédiction d'appartenance à une des trois classes. Cette prédiction est caractérisée par une probabilité (entre 0 et 1) d'appartenance à chaque classe.
 
 
-#### A faire plus tard 
+### A faire plus tard 
 
 Déploier mon modèle d'IA crée dans mon téléphone et l'utiliser sous forme de WebApp pour détecter les mouvements.
