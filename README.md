@@ -88,7 +88,7 @@ quelques secondes sur le smartphone
 - A la fin de l'acquisition, l'échantillon (la mesure effectuée) on obtient 2 dataset qui correspond chacun à un label et une courbe l'évolution temporelle des accélérations mesurées suivant les trois directions
 
 <p align="center">
-  <img alt="dataset" src="./assets/dataset.png" width="200px">
+  <img alt="dataset" src="./assets/dataset.png" width="400px">
 </p>
 
 Après avoir acquis tout les données necessaires nous allons spliter les données en 2 ensembles : 
@@ -96,7 +96,7 @@ Après avoir acquis tout les données necessaires nous allons spliter les donné
 - Données de test (environ 25% du dataset) → Test des performances du modèle
 
 <p align="center">
-  <img alt="dataset" src="./assets/data.png" width="200px">
+  <img alt="dataset" src="./assets/Data.png" width="300px">
 </p>
 
 Training Set: l'ensemble complet des données d'entraînement. Vous pouvez extraire des caractéristiques et entraîner un modèle, etc.
@@ -106,7 +106,7 @@ Validation Set: Cet ensemble est crucial pour choisir les paramètres optimaux d
 Testing Set: Une fois le modèle obtenu, on effectue des prédictions à l'aide de ce modèle, tel qu'il a été obtenu sur l'ensemble d'entraînement.
 
 <p align="center">
-  <img alt="dataset" src="./assets/split_dataset.webp" width="200px">
+  <img alt="dataset" src="./assets/split_dataset.webp" width="400px">
 </p>
 
 ### Mise en forme des données
