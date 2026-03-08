@@ -73,7 +73,7 @@ Nous allons pour commencer acquérir des données qui serviront plus tard à ent
 verticalement".
 
 <p align="center">
-  <img alt="dataset" src="./assets/Creation_dataset.png" width="300px">
+  <img alt="dataset" src="./assets/Creation_dataset.png" width="350px">
 </p>
 
 - l'acquisition du signal démarre automatiquement au bout de
