@@ -24,7 +24,7 @@ de développement pour l'apprentissage automatique sur les dispositifs embaqués
 ## TINYML – IA EMBARQUEE
 
 <p align="center">
-  <img alt="schema TinyML" src="./assets/Schema_TinuML.png" width="250px">
+  <img alt="schema TinyML" src="./assets/Schema_TinuML.png" width="300px">
 </p>
 
 **TinyML** désigne l'implémentation de modèles d'apprentissage automatique (Machine
