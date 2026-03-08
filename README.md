@@ -219,7 +219,7 @@ On entre ici dans la phase d'utilisation (inférence) de l'algorithme d'IA qui a
 Première possibilité avec Edge Impulse : "Live Classification" – adapté au test rapide du modèle
 
 <p align="center">
-  <img alt="Inference" src="./assets/Inference.gif" width="500px">
+  <img alt="Inference" src="./assets/Inference1.gif" width="500px">
 </p>
 
 A la fin de l'acquisition, la mesure apparaît à l'écran de l'ordinateur. On retrouve le découpage en plusieurs échantillons avec la méthode de la fenêtre glissante définie dans la vidéo, ce qui amène plusieurs échantillons pour une  seule mesure. Pour chaque échantillon, l'algorithme effectue une prédiction d'appartenance à une des trois classes. Cette prédiction est caractérisée par une probabilité (entre 0 et 1) d'appartenance à chaque classe.
