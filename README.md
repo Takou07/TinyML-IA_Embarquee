@@ -160,3 +160,57 @@ On observe alors sur un graphique des ensembles de points de 2 couleurs différe
 
 #### Choix du modèle
 
+<p align="center">
+  <img alt="feature" src="./assets/Training_setting.webp" width="500px">
+</p>
+
+Paramètres d'entraînement avec le nombre d'époques qui est de 30 c'est à dire va voir l'ensemble des données 30 fois. A chaque cycle il ajuste ses poids pour mieux classifier. Le learning rate qui est de 0.0005.
+
+<p align="center">
+  <img alt="Network" src="./assets/Neural_network_architecture.webp" width="500px">
+</p>
+
+Au niveau de l'architecture du réseau de neurones, on a :
+- Une couche en entrée 
+- 2 couches cachées de 20 neurones
+- 1 couche Sortie de 10 neurones
+
+#### Phase d'apprentissage 
+
+C'est à cette étape que Edge Impulse utilise entre autres un algorithme de descente de gradient pour ajuster les poids et les biais associés à chaque neurone artificiel.
+
+<p align="center">
+  <img alt="Matrix" src="./assets/matrix.png" width="500px">
+</p>
+
+Le modèle a ici une précision (accuracy) de 100%. Cela signifie que 1001% des échantillons des données d'entrainement ont vu leur classe de sortie prédite
+correctement
+
+Pour aller plus dans le détail, on peut observer la matrice de confusion :
+- En colonnes, les classes prédites par l'algorithme.
+- En lignes, les classes connues car étiquetées dans les données d'entrainement.
+
+<p align="center">
+  <img alt="Explorer" src="./assets/Data_explorer.png" width="500px">
+</p>
+
+Le "Data explorer" nous permet de retrouver les échantillons pour lesquels la
+prédiction a été mauvaise. Ci-contre, on peut voir qu'aucun échantillons ont vu leur classe mal prédite
+
+#### Test du modèle
+
+On obtient un récapitulatif de performances similaire au précédent. Assez logiquement, les performances sont un peu moins satisfaisantes que sur le set de données d'entrainement (on rappelle que l'algorithme n'avais "jamais vu" les
+données de test). Dans l'exemple ci-contre, la précision obtenue, supérieure à 97.60% est satisfaisante.
+
+<p align="center">
+  <img alt="Test" src="./assets/Test_model.png" width="500px">
+</p>
+
+Ici le "Feature explorer" nous permet de retrouver les échantillons pour lesquels la prédiction a été mauvaise. Ci-contre, on peut voir que 6 échantillons ont vu leur classe mal prédite.
+
+<p align="center">
+  <img alt="Explorer_test" src="./assets/feature_test.png" width="500px">
+</p>
+
+#### Inference ➔ Predictions
+
