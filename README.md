@@ -24,7 +24,7 @@ de développement pour l'apprentissage automatique sur les dispositifs embaqués
 ## TINYML – IA EMBARQUEE
 
 <p align="center">
-  <img alt="schema TinyML" src="./assets/Shema_TinuML.png" width="250px">
+  <img alt="schema TinyML" src="./assets/Schema_TinuML.png" width="250px">
 </p>
 
 **TinyML** désigne l'implémentation de modèles d'apprentissage automatique (Machine
@@ -54,5 +54,5 @@ Nos smartphones pssèdent une **centrale inertielle** (IMU - Inertial Measuremen
 Dans ce projet le capteur qui sera utilisé pour la détection des données sera la **Accéléromètre** qui va mesurer l'accélération linéaire sur 3 axes (X, Y, Z) en m/s² ou en g
 
 <p align="center">
-  <img alt="Accéléromètre" src="./assets/Accéléromètre.png" width="250px">
+  <img alt="Accéléromètre" src="./assets/Accéléromètre.png" width="150px">
 </p>
