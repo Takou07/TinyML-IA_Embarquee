@@ -59,7 +59,7 @@ Dans ce projet le capteur qui sera utilisé pour la détection des données sera
 Comme nous allons ici résoudre un problème de classification associé à des mouvements du smartphone, créons d'abord le projet dans **Edge Impulse**
 
 <p align="center">
-  <img alt="Projet" src="./assets/Creation_project.png" width="300px">
+  <img alt="Projet" src="./assets/Creation_project.png" width="400px">
 </p>
 
 Les 2 mouvements (qui seront 2 classes) qu'on va  distinguer seront : 
@@ -73,7 +73,7 @@ Nous allons pour commencer acquérir des données qui serviront plus tard à ent
 verticalement".
 
 <p align="center">
-  <img alt="dataset" src="./assets/Creation_dataset.png" width="350px">
+  <img alt="dataset" src="./assets/Creation_dataset.png" width="400px">
 </p>
 
 - l'acquisition du signal démarre automatiquement au bout de
