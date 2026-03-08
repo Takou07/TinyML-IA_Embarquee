@@ -57,7 +57,7 @@ Dans ce projet le capteur qui sera utilisé pour la détection des données sera
 Comme nous allons ici résoudre un problème de classification associé à des mouvements du smartphone, créons d'abord le projet dans **Edge Impulse**
 
 <p align="center">
-  <img alt="Projet" src="./assets/Creation_project.png" width="400px">
+  <img alt="Projet" src="./assets/Creation_project.png" width="500px">
 </p>
 
 Les 2 mouvements (qui seront 2 classes) qu'on va  distinguer seront : 
@@ -71,7 +71,7 @@ Nous allons pour commencer acquérir des données qui serviront plus tard à ent
 verticalement".
 
 <p align="center">
-  <img alt="dataset" src="./assets/Creation_dataset.png" width="400px">
+  <img alt="dataset" src="./assets/Creation_dataset.png" width="500px">
 </p>
 
 - l'acquisition du signal démarre automatiquement au bout de
@@ -86,7 +86,7 @@ quelques secondes sur le smartphone
 - A la fin de l'acquisition, l'échantillon (la mesure effectuée) on obtient 2 dataset qui correspond chacun à un label et une courbe l'évolution temporelle des accélérations mesurées suivant les trois directions
 
 <p align="center">
-  <img alt="dataset" src="./assets/dataset.png" width="400px">
+  <img alt="dataset" src="./assets/dataset.png" width="500px">
 </p>
 
 Après avoir acquis tout les données necessaires nous allons spliter les données en 2 ensembles : 
@@ -104,7 +104,7 @@ Validation Set: Cet ensemble est crucial pour choisir les paramètres optimaux d
 Testing Set: Une fois le modèle obtenu, on effectue des prédictions à l'aide de ce modèle, tel qu'il a été obtenu sur l'ensemble d'entraînement.
 
 <p align="center">
-  <img alt="dataset" src="./assets/split_dataset.webp" width="400px">
+  <img alt="dataset" src="./assets/split_dataset.webp" width="500px">
 </p>
 
 Avant d'entraîner l'algorithme d'IA à reconnaître les différentes classes, il faut extraire, à partir des données temporelles acquises, des attributs (features) que l'on peut voir comme les "caractéristiques principales" des signaux. Les différences parmi ces attributs permettront de distinguer et de classer les différents mouvements.
@@ -124,7 +124,7 @@ L'image ci dessous demontre cela :
 #### Analyse du Spectre
 
 <p align="center">
-  <img alt="Spectre" src="./assets/Spectre_analysis.webp" width="400px">
+  <img alt="Spectre" src="./assets/Spectre_analysis.webp" width="500px">
 </p>
 
 - Dans cet image on peut voir le signal brut de "Secouer_horizontalement". La zone grisée à gauche est un morceau qui est analysé en bas dont les valeurs brutes avant tout traitement DSP 
@@ -132,7 +132,7 @@ L'image ci dessous demontre cela :
 - Après l'application du filtre on peut voit que le signal est légèrement lissé
 
 <p align="center">
-  <img alt="Spectre" src="./assets/processed_feature.png" width="400px">
+  <img alt="Spectre" src="./assets/processed_feature.png" width="500px">
 </p>
 
 Ici on peut trouver les paramètres généraux du traitement DSP :
@@ -143,19 +143,20 @@ Ici on peut trouver les paramètres généraux du traitement DSP :
 
 Ce processus est très important pour distinguer les gestes : 
 
-Secouer horizontalement     Marche
-────────────────────────    ──────
-Énergie forte à 2-4 Hz      Énergie forte à 1-2 Hz
-Pic unique                  Pic régulier cadencé
+- Secouer horizontalement : Énergie forte à 2-4 Hz, Pic unique                  
 
-Chute                       Repos
-─────                       ──────
-Énergie sur TOUTES          Énergie quasi nulle
-les fréquences              partout
-(choc = signal large bande)
+- Marche : Énergie forte à 1-2 Hz , Pic régulier cadencé
+
+- Chute : Énergie sur toutes les fréquences, (choc = signal large bande)           
+
+- Repos : Énergie quasi nulle partout
+                       
 
 On observe alors sur un graphique des ensembles de points de 2 couleurs différentes, associées aux 2 classes à classifier. , les points d'une même couleur forment des ensembles groupés(clusters). Ces attributs  révélent des différences caractéristiques entre les 2 classes.
 
 <p align="center">
-  <img alt="feature" src="./assets/feature_explorer.png" width="400px">
+  <img alt="feature" src="./assets/Feature_explorer.png" width="500px">
 </p>
+
+#### Choix du modèle
+
